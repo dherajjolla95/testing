@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="icon" href="./images/brand/favicon.svg" />
+  <!-- phosphor icons -->
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/regular/style.css" />
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/thin/style.css" />
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/light/style.css" />
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/bold/style.css" />
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/fill/style.css" />
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/duotone/style.css" />
+  <!-- styling css -->
+  <link rel="stylesheet" href="./plugins/bootstrap-5.3.3/bootstrap.min.css" />
+  <link rel="stylesheet" href="./plugins/swiper-11.1.4/swiper.min.css" />
+  <link rel="stylesheet" href="./plugins/aos-2.0.0/aos.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <style>
+    /* contact page tweaks */
+    .contact-form .form-control.is-invalid {
+      border-color: #dc3545 !important;
+      background-image: none;
+    }
+    .contact-form .form-control.is-valid {
+      border-color: #198754 !important;
+      background-image: none;
+    }
+    .contact-form .invalid-feedback {
+      font-size: 0.85rem;
+    }
+    .contact-form label {
+      font-weight: 600;
+      color: #ffffff;
+    }
+    /* WHITE BACKGROUND FOR ALL FORM FIELDS */
+    .contact-form .form-control {
+      background-color: #ffffff !important;
+      border: 1px solid #ced4da;
+    }
+    .contact-form .form-control:focus {
+      background-color: #ffffff !important;
+      border-color: #dc3545;
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+    /* ensure textarea also white */
+    .contact-form textarea.form-control {
+      background-color: #ffffff !important;
+    }
+    .contact-info-icon {
+      min-width: 48px;
+      height: 48px;
+      background: #f8f9fc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .contact-info-item:last-child {
+      border-bottom: 0;
+    }
+    .contact-page .sec_heading_parent.start {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    /* REDUCED HERO HEIGHT & SPACING */
+    .hero {
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+      min-height: auto !important;
+    }
+    .hero .hero_wrapper {
+      gap: 0.5rem !important;
+    }
+    .hero .hero_heading_wrapper {
+      margin-bottom: 0 !important;
+      gap: 0.25rem !important;
+    }
+    .hero .hero_heading_wrapper .heading_img {
+      margin-bottom: 0.5rem !important;
+    }
+    .hero .hero_heading {
+      font-size: 2.8rem !important;
+      margin-bottom: 0 !important;
+    }
+    .hero .hero_desc {
+      font-size: 1rem !important;
+      max-width: 600px;
+      margin-bottom: 0 !important;
+    }
+
+    /* make "Send us a message" heading & description white */
+    .contact-page .sec_heading_parent.start .sec_heading,
+    .contact-page .sec_heading_parent.start .sec_desc {
+      color: #ffffff !important;
+    }
+    .contact-page .sec_heading_parent.start .sec_heading span {
+      color: #ffffff !important;
+    }
+
+    /* REMOVE CONSULTATION BOTTOM MARGIN */
+    .consultation {
+      margin-bottom: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+      .hero .hero_heading {
+        font-size: 2.2rem !important;
+      }
+      .contact-info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header (exactly same as home) -->
+  <header class="header shadow">
+    <div class="header_top py-2">
+      <div class="container-xl">
+        <div class="d-flex justify-content-lg-between justify-content-center">
+          <div class="contact_info_parent d-flex gap-4">
+            <a href="tel:0123456789" class="contact_info d-flex gap-2">
+              <figure class="contact_info_icon">
+                <img src="images/icons/phone-icon.svg" alt="" />
+              </figure>
+              <span>0-123-456-789</span>
+            </a>
+            <a href="tel:0123456789" class="contact_info d-flex gap-2">
+              <figure class="contact_info_icon">
+                <img src="images/icons/mail-icon.svg" alt="" />
+              </figure>
+              <span>company.email@info.com</span>
+            </a>
+          </div>
+          <div class="social_parent d-lg-flex d-none gap-2">
+            <a href="#" class="social_link scale d-flex gap-2">
+              <figure class="contact_info_icon">
+                <img src="images/icons/fb.svg" alt="" />
+              </figure>
+            </a>
+            <a href="#" class="social_link scale d-flex gap-2">
+              <figure class="contact_info_icon">
+                <img src="images/icons/insta.svg" alt="" />
+              </figure>
+            </a>
+            <a href="#" class="social_link scale d-flex gap-2">
+              <figure class="contact_info_icon">
+                <img src="images/icons/tw.svg" alt="" />
+              </figure>
+            </a>
+            <a href="#" class="social_link scale d-flex gap-2">
+              <figure class="contact_info_icon">
+                <img src="images/icons/linkedin.svg" alt="" />
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header_bottom py-3">
+      <div class="container-xl">
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="index.html" class="logo">
+            <img src="images/brand/logo.svg" alt="" />
+          </a>
+          <div id="menu">
+            <div class="offcanvas-header d-lg-none">
+              <h5 class="offcanvas-title" id="offcanvasLabel">Menu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <ul class="navbar-nav flex-lg-row flex-column gap-lg-5 gap-3">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">SERVICES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pricing.html">PRICING</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">ABOUT US</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contactus.html">CONTACT US</a>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex gap-2 align-items-center">
+            <div class="button_parent scale d-none d-sm-flex">
+              <a class="btn" href="#" role="button">
+                <span>GET A FREE QUOTE</span>
+              </a>
+            </div>
+            <div class="button_parent menu_btn d-flex d-lg-none scale" data-bs-toggle="offcanvas" data-bs-target="#menu">
+              <a class="btn" href="#" role="button">
+                <i class="ph ph-list"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- main -->
+  <main class="contact-page">
+    <!-- Hero section (REDUCED HEIGHT) -->
+    <section class="hero">
+      <div class="container-xl">
+        <div class="hero_wrapper d-flex flex-column align-items-center">
+          <hgroup class="hero_heading_wrapper text-center d-flex flex-column align-items-center">
+            <div class="heading_img" data-aos="fade-up">
+              <img src="images/icons/leaves.svg" alt="" />
+            </div>
+            <h1 class="hero_heading" data-aos="fade-up" data-aos-delay="200">
+              Get in <span>touch</span> with us
+            </h1>
+            <p class="hero_desc" data-aos="fade-up" data-aos-delay="400">
+              We’d love to hear from you. Drop us a message and our team will get back to you as soon as possible.
+            </p>
+          </hgroup>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact form & info -->
+    <section class="consultation pt-0">
+      <div class="container-xl">
+        <div class="row gy-5 align-items-start">
+          <!-- left: form -->
+          <div class="col-lg-7" data-aos="fade-up">
+            <div class="sec_heading_parent start mb-4 mx-0">
+              <h4 class="sec_heading m-0 pt-0">Send us a <span>message</span></h4>
+              <p class="sec_desc m-0">Fill in the details below and we’ll reply within 24 hours.</p>
+            </div>
+            <form class="contact-form needs-validation" novalidate id="contactForm">
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Dheraj" required />
+                  <div class="invalid-feedback">First name is required.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="lastName" placeholder="jolla" required />
+                  <div class="invalid-feedback">Last name is required.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="email" placeholder="you@example.com" required />
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" id="phone" placeholder="+1 234 567 890" required />
+                  <div class="invalid-feedback">Phone number is required.</div>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+                  <textarea class="form-control" id="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+                  <div class="invalid-feedback">Please enter your message.</div>
+                </div>
+                <div class="col-12 mt-4">
+                  <div class="button_parent">
+                    <button type="submit" class="btn" id="submitBtn">
+                      <span>SEND MESSAGE</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- right: contact info -->
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-white shadow-lg rounded p-4 p-md-5">
+              <h4 class="fw-bold mb-4">Contact Information</h4>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <img src="images/icons/pin.svg" width="22" alt="address" />
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0">Address</h6>
+                  <p class="text-muted mb-0">8819 Ohio St. South Gate, CA 90280</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <img src="images/icons/phone.svg" width="22" alt="phone" />
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0">Phone</h6>
+                  <p class="text-muted mb-0">+0-123-456-789</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <img src="images/icons/email.svg" width="22" alt="email" />
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0">Email</h6>
+                  <p class="text-muted mb-0 webkit_box">ResumeServicesCanada@info.com</p>
+                </div>
+              </div>
+              <div class="contact-info-item border-0">
+                <div class="contact-info-icon">
+                  <img src="images/icons/consultation_icon_3.svg" width="22" alt="support" />
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0">Support</h6>
+                  <p class="text-muted mb-0">24/7 live chat &amp; email</p>
+                </div>
+              </div>
+              <hr class="my-4" />
+              <div class="d-flex gap-3">
+                <a href="#" class="social_link scale d-flex gap-2">
+                  <figure class="contact_info_icon">
+                    <img src="images/icons/fb.svg" alt="" />
+                  </figure>
+                </a>
+                <a href="#" class="social_link scale d-flex gap-2">
+                  <figure class="contact_info_icon">
+                    <img src="images/icons/insta.svg" alt="" />
+                  </figure>
+                </a>
+                <a href="#" class="social_link scale d-flex gap-2">
+                  <figure class="contact_info_icon">
+                    <img src="images/icons/tw.svg" alt="" />
+                  </figure>
+                </a>
+                <a href="#" class="social_link scale d-flex gap-2">
+                  <figure class="contact_info_icon">
+                    <img src="images/icons/linkedin.svg" alt="" />
+                  </figure>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- optional: small CTA (like home) -->
+    <section class="discount_banner bg-black pt-5 pb-5">
+      <div class="container-xl">
+        <div class="row">
+          <div class="col-12" data-aos="fade-up">
+            <div class="sec_heading_parent white">
+              <h4 class="sec_heading pt-0">Need a <span>professional resume</span> right now?</h4>
+              <p class="sec_desc">Get started with Canada’s #1 resume writing service. Our experts are ready to help.</p>
+            </div>
+          </div>
+          <div class="col-12" data-aos="fade-up">
+            <div class="d-flex flex-wrap align-items-center justify-content-center gap-4 gap-sm-2">
+              <div class="button_parent">
+                <a href="pricing.html" class="btn black">
+                  <span>view packages</span>
+                </a>
+              </div>
+              <div class="button_parent">
+                <a href="#" class="btn black live_chat_btn">
+                  <span>start a live chat</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer (exactly same as home) -->
+  <footer class="bg-black">
+    <div class="footer-top">
+      <img class="footer-leaves d-none d-xl-block" src="./images/backgrounds/footer-leaves.svg" alt="" />
+      <div class="container-xl">
+        <div class="row gy-4">
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="logo">
+              <img src="images/brand/logo-white.svg" alt="" />
+            </div>
+            <p class="footer-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id laoreet sem. Curabitur aliquam augue ante, vitae sagittis enim dictum a. Fusce faucibus purus id nulla suscipit semper
+            </p>
+          </div>
+          <div class="col-xl-2 col-lg-4 col-md-6 offset-xl-1">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="list-group">
+              <li class="list-group-item">Sitemap</li>
+              <li class="list-group-item">About Us</li>
+              <li class="list-group-item">Contact Us</li>
+              <li class="list-group-item">Reviews</li>
+              <li class="list-group-item">Free CV Review</li>
+              <li class="list-group-item">Blog</li>
+            </ul>
+          </div>
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <h5 class="footer-heading">Services</h5>
+            <ul class="list-group">
+              <li class="list-group-item">Resume Writing Service</li>
+              <li class="list-group-item">Job Application Forms</li>
+              <li class="list-group-item">CV Editing</li>
+              <li class="list-group-item">Nursing CV Writing</li>
+              <li class="list-group-item">IT CV Writing Service</li>
+              <li class="list-group-item">Cover Letter Writing</li>
+              <li class="list-group-item">Management CV Writing</li>
+              <li class="list-group-item">Graduate CV Writing</li>
+              <li class="list-group-item">Construction CV Writing</li>
+            </ul>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <h5 class="footer-heading">Get in Touch</h5>
+            <ul class="list-group gap-3">
+              <li class="list-group-item">
+                <object data="./images/icons/pin.svg" width="20"></object>
+                <span>8819 Ohio St. South Gate, CA 90280</span>
+              </li>
+              <li class="list-group-item">
+                <object data="./images/icons/email.svg" width="20"></object>
+                <span class="webkit_box">ResumeServicesCanada@info.com</span>
+              </li>
+              <li class="list-group-item">
+                <object data="./images/icons/phone.svg" width="20"></object>
+                <span>+0-123-456-789</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <h5 class="footer-heading">Join a Newsletter</h5>
+            <form class="subscribe-form">
+              <div class="mb-3">
+                <label for="email" class="form-label text-light">Your Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Your Email" />
+              </div>
+              <button type="submit" class="btn-subscribe">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container-xl">
+        <div class="row gy-2">
+          <div class="col-lg-6 text-center text-lg-start">
+            <p class="text-white">© copyright 2023 Resume Services Canada, All Rights Reserved</p>
+          </div>
+          <div class="col-lg-6 text-center text-lg-end">
+            <a href="#" class="footer-link text-white">Terms and Conditions</a>
+            <a href="#" class="footer-link text-white">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- script files -->
+  <script type="text/javascript" src="./plugins/swiper-11.1.4/swiper.min.js"></script>
+  <script type="text/javascript" src="./plugins/bootstrap-5.3.3/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./plugins/jquery-3.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./plugins/jquery-3.7.1/counter.min.js"></script>
+  <script type="text/javascript" src="./js/career-level.js"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
+  <script type="text/javascript" src="./plugins/aos-2.0.0/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 0,
+    });
+
+    (function() {
+      'use strict';
+      const form = document.getElementById('contactForm');
+      const inputs = form.querySelectorAll('input, textarea');
+
+      inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+          validateField(this);
+        });
+        input.addEventListener('input', function() {
+          if (this.classList.contains('is-invalid') || this.classList.contains('is-valid')) {
+            validateField(this);
+          }
+        });
+      });
+
+      function validateField(field) {
+        if (field.checkValidity()) {
+          field.classList.remove('is-invalid');
+          field.classList.add('is-valid');
+        } else {
+          field.classList.remove('is-valid');
+          field.classList.add('is-invalid');
+        }
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let allValid = true;
+        inputs.forEach(input => {
+          validateField(input);
+          if (!input.checkValidity()) allValid = false;
+        });
+        if (allValid) {
+          alert('Your message has been sent! We’ll get back to you shortly.');
+          form.reset();
+          inputs.forEach(input => {
+            input.classList.remove('is-valid', 'is-invalid');
+          });
+        } else {
+          const firstInvalid = form.querySelector('.is-invalid');
+          if (firstInvalid) firstInvalid.focus();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
