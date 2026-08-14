@@ -711,6 +711,7 @@ section {
 .consultation {
   overflow: visible;
   margin-bottom: 130px;
+  margin-top:45px;
   background-size: cover;
   background-position: center;
   background-image: url('../images/backgrounds/consultation_bg.webp');
